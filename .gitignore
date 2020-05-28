@@ -1,0 +1,20 @@
+### Miscellaneous
+.DS_Store
+Thumbs.db
+
+### Vagrant
+/.vagrant
+
+### Composer
+/vendor/
+
+### IDE
+/.idea
+
+### PHPCS
+cs_fixer*
+.php_cs.cache
+
+### NodeJS
+node_modules/
+

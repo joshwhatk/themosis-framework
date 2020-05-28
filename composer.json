@@ -1,0 +1,50 @@
+{
+  "name": "joshwhatk/themosis-framework",
+  "description": "Load the Themosis Framework classes that matter.",
+  "keywords": [
+    "themosis",
+    "framework",
+    "wordpress"
+  ],
+  "version": "1.0.0",
+  "license": "GPL-2.0-or-later",
+  "authors": [
+    {
+      "name": "Josh Friend",
+      "email": "joshwhatk@gmail.com",
+      "homepage": "https://www.jwk.me/"
+    }
+  ],
+  "type": "project",
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "JoshWhatK\\ThemosisFramework\\": "src/"
+    }
+  },
+  "config": {
+    "preferred-install": "dist",
+    "sort-packages": true,
+    "optimize-autoloader": true
+  },
+  "require": {
+    "php": ">=7.1.0",
+    "themosis/framework": "^2.0.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^7.0",
+    "symfony/var-dumper": "^4.2"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "scripts": {
+    "post-autoload-dump": [
+      "JoshWhatK\\ThemosisFramework\\Console\\ComposerScripts::wpEngineSetup"
+    ]
+  }
+}
