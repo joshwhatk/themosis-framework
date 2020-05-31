@@ -36,7 +36,7 @@ class Config
             return $this->get(join('.', $item_parts), $items[$part]);
         }
 
-        return $items[$part];
+        return collect($items[$part]);
     }
 
     private function getConfigFileNames()
