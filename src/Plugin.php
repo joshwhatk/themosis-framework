@@ -6,10 +6,13 @@ use Themosis\Core\HooksRepository;
 use JoshWhatK\ThemosisFramework\App\Container;
 use Illuminate\Contracts\Foundation\Application;
 use JoshWhatK\ThemosisFramework\App\Configuration;
+use JoshWhatK\ThemosisFramework\Contracts\IsAnApplication;
 use JoshWhatK\ThemosisFramework\Database\Instance as Database;
 
 class Plugin implements Application
 {
+    use IsAnApplication;
+
     public static function boot()
     {
         return new static();
