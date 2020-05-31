@@ -6,7 +6,8 @@ use JoshWhatK\ThemosisFramework\Database\Instance;
 
 class Plugin
 {
-    public static function boot() {
+    public static function boot()
+    {
         return new static();
     }
 

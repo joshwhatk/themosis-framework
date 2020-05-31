@@ -2,6 +2,8 @@
 
 namespace JoshWhatK\ThemosisFramework\Database;
 
+use Illuminate\Database\Capsule\Manager as Capsule;
+
 class Instance
 {
     public static function boot()
