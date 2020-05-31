@@ -21,5 +21,6 @@ class Container
     protected function __construct()
     {
         $this->container = BaseContainer::getInstance();
+        $this->container->instance('Config', Configuration::boot()->config());
     }
 }
