@@ -2,7 +2,8 @@
 
 namespace JoshWhatK\ThemosisFramework;
 
-use JoshWhatK\ThemosisFramework\Database\Instance;
+use JoshWhatK\ThemosisFramework\Core\Container;
+use JoshWhatK\ThemosisFramework\Database\Instance as Database;
 
 class Plugin
 {
@@ -13,6 +14,7 @@ class Plugin
 
     protected function __construct()
     {
-        Instance::boot();
+        Container::boot();
+        Database::boot();
     }
 }
