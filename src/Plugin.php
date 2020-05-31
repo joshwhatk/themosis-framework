@@ -2,7 +2,7 @@
 
 namespace JoshWhatK\ThemosisFramework;
 
-use JoshWhatK\ThemosisFramework\Core\Container;
+use JoshWhatK\ThemosisFramework\App\Container;
 use JoshWhatK\ThemosisFramework\Database\Instance as Database;
 
 class Plugin
