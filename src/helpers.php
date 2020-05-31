@@ -3,16 +3,26 @@
 use JoshWhatK\ThemosisFramework\App\Configuration;
 use JoshWhatK\ThemosisFramework\App\Container;
 
-if (!function_exists('app')) {
-    function app()
+if (!function_exists('_app')) {
+    function _app($key = null)
     {
-        return Container::boot()->container();
+        $container = Container::boot()->container();
+        if (!is_null($key)) {
+            return $container->get($key);
+        }
+
+        return $container;
     }
 }
 
-if (!function_exists('config')) {
-    function config()
+if (!function_exists('_config')) {
+    function _config($key = null)
     {
-        return Configuration::boot()->config();
+        $config = Configuration::boot()->config();
+        if (!is_null($key)) {
+            return $config->get($key);
+        }
+
+        return $config;
     }
 }
