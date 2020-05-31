@@ -13,7 +13,7 @@ class Plugin implements Application
 {
     use IsAnApplication;
 
-    public static function boot()
+    public static function startUp()
     {
         return new static();
     }
