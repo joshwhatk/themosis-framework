@@ -25,7 +25,10 @@
   "autoload": {
     "psr-4": {
       "JoshWhatK\\ThemosisFramework\\": "src/"
-    }
+    },
+    "files": [
+      "src/helpers.php"
+    ]
   },
   "config": {
     "preferred-install": "dist",
