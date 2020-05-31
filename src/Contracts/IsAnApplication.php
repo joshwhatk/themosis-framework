@@ -2,6 +2,8 @@
 
 namespace JoshWhatK\ThemosisFramework\Contracts;
 
+use Closure;
+
 trait IsAnApplication
 {
     /**
