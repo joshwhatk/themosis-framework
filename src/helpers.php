@@ -6,7 +6,7 @@ use JoshWhatK\ThemosisFramework\App\Container;
 if (!function_exists('_app')) {
     function _app($key = null)
     {
-        $container = Container::startUp()->container();
+        $container = Container::startUp();
         if (!is_null($key)) {
             return $container->get($key);
         }
