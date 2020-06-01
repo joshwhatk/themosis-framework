@@ -14,4 +14,27 @@ class Container extends BaseContainer implements Application
     {
         return $GLOBALS[static::class] ?? $GLOBALS[static::class] = static::getInstance();
     }
+
+    /**
+     * Create and register a hook instance.
+     *
+     * @param string $hook
+     */
+    public function registerHook(string $hook)
+    {
+        // Build a "Hookable" instance.
+        // Hookable instances must extend the "Hookable" class.
+        $instance = new $hook($this);
+        $hooks = (array) $instance->hook;
+
+        if (! method_exists($instance, 'register')) {
+            return;
+        }
+
+        if (! empty($hooks)) {
+            $this['action']->add($hooks, [$instance, 'register'], $instance->priority);
+        } else {
+            $instance->register();
+        }
+    }
 }
