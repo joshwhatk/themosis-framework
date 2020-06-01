@@ -3,17 +3,13 @@
 namespace JoshWhatK\ThemosisFramework;
 
 use Themosis\Core\HooksRepository;
-use Illuminate\Container\Container;
 use Illuminate\Contracts\Foundation\Application;
 use JoshWhatK\ThemosisFramework\App\Configuration;
-use JoshWhatK\ThemosisFramework\Contracts\IsAnApplication;
 use JoshWhatK\ThemosisFramework\Database\Instance as Database;
 
-class Plugin extends Container implements Application
+class Plugin
 {
-    use IsAnApplication;
-
-    public static function startUp()
+    public static function boot()
     {
         return new static();
     }
@@ -21,13 +17,13 @@ class Plugin extends Container implements Application
     protected function __construct()
     {
         Database::boot();
-        _app()->instance('Config', Configuration::boot()->config());
+        // _app()->instance('Config', Configuration::boot()->config());
         // _app()->alias('action', \Themosis\Hook\ActionBuilder::class);
         // _app()->bind('action', new \Themosis\Hook\ActionBuilder(_app()));
         // _app()->alias('filter', \Themosis\Hook\FilterBuilder::class);
         // _app()->bind('filter', new \Themosis\Hook\FilterBuilder(_app()));
-        $this->registerCoreContainerAliases();
-        $this->registerConfiguredHooks();
+        // $this->registerCoreContainerAliases();
+        // $this->registerConfiguredHooks();
     }
 
     public function registerConfiguredHooks(string $config = '')

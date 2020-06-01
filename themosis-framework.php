@@ -15,5 +15,5 @@
 use JoshWhatK\ThemosisFramework\Plugin;
 
 add_action('plugins_loaded', function () {
-    Plugin::startUp();
+    Plugin::boot();
 });
